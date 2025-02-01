@@ -2,7 +2,6 @@
 
 SUMUP-DA is a **dbt project** designed to **combine web orders and lead funnel data** for the POS Lite team. The goal is to **enable self-service analytics** by providing clean, structured, and transformed data marts.
 
----
 
 ## 📌 Background
 
@@ -11,13 +10,13 @@ SUMUP-DA is a **dbt project** designed to **combine web orders and lead funnel d
 1. **Website Orders** – Customers visit the site via marketing campaigns and place orders directly.
 2. **Contact Sales Form** – Customers submit a contact form (stored in Salesforce). A Lead Development Representative (LDR) then follows up, identifies customer needs, and closes deals.
 
----
+
 
 ## ❓ Problem Statement
 
 The **POS Lite Team Lead** requires a **consolidated view** of both **web_orders** and **leads_funnel** data to effectively track and optimize performance across sales channels.
 
----
+
 
 ## 🔎 Assumptions
 
@@ -27,7 +26,7 @@ The **POS Lite Team Lead** requires a **consolidated view** of both **web_orders
 - Leads and fake leads are aggregated on the same day.  
   _Assumption:_ Fake leads are not identified from the previous day’s leads, so the daily count of fake leads should never exceed the count of total leads.
 
----
+
 
 ## ⚠️ Discovered Data Issues & Cleaning Solutions
 
@@ -42,7 +41,7 @@ During data analysis, several issues were identified. Below is a summary of thes
 | **5️⃣ Data Outliers**                         | Daily lead/order counts exceeding 100 were flagged as abnormal. For other metrics, values exceeding 1.5 times the average were considered outliers. Cost metrics are handled separately. | Outliers in counts are set to 0, and other metric outliers are replaced with the average value.                   |
 | **6️⃣ Missing Date/Country_ID Values**        | Some records were missing `date` or `country_id`.                               | When possible, these values are mapped from related datasets via `campaign_id`; otherwise, they are assigned a default value (`1999-01-01`) or labeled as `unknown`. |
 
----
+
 
 ## 🛠 Data Pipeline Breakdown
 
@@ -62,7 +61,7 @@ During data analysis, several issues were identified. Below is a summary of thes
 - **Key Integration:**  
   - Combines data from **web_orders** and **leads_funnel** to create consolidated views for performance tracking.
 
----
+
 
 ## 🚀 Current Limitations & Next Steps
 
