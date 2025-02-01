@@ -1,0 +1,8 @@
+sources:
+  - name: staging_db
+    database: 'C:\Users\T14\sumup-da\sqlite\my_database.db'
+    schema: 'main'
+    tables:
+      - name: channels
+      - name: leads_funnel
+      - name: web_orders
