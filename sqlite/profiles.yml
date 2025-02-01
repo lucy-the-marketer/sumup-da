@@ -1,0 +1,23 @@
+sqlite:
+  outputs:
+    dev:
+      type: sqlite
+      threads: 1
+      database: 'C:/Users/T14/sumup-da/sqlite/my_database.db'
+      schema: 'main'
+      schemas_and_paths:
+        main: 'C:/Users/T14/sumup-da/sqlite/my_database.db'
+      schema_directory: 'C:/Users/T14/sumup-da/sqlite'
+      extensions: []
+
+    prod:
+      type: sqlite
+      threads: 1
+      database: 'C:/Users/T14/sumup-da/sqlite/my_database.db'
+      schema: 'main'
+      schemas_and_paths:
+        main: 'C:/Users/T14/sumup-da/sqlite/my_database.db'
+      schema_directory: 'C:/Users/T14/sumup-da/sqlite'
+      extensions: []
+
+  target: dev
